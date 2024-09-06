@@ -1,8 +1,9 @@
 from flask import Blueprint, request, jsonify, render_template
 from .models import add_habit, get_all_habits
-from .config import Config
 from .utils import log_sync
+from .config import Config 
 import json
+from datetime import datetime
 
 main = Blueprint('main', __name__)
 
@@ -11,7 +12,16 @@ def sync():
     data = request.json
     rows_added = 0
     for habit in data['habits']:
-        add_habit(habit['type'], habit['timestamp'], json.dumps(habit))
+        habit_type = habit['type']
+        timestamp = habit['timestamp']
+        
+        if habit_type == 'sleep':
+            # For sleep, we use the date provided and set the time to midnight
+            date = datetime.strptime(habit['date'], '%Y-%m-%d').replace(hour=0, minute=0, second=0, microsecond=0)
+            timestamp = date.isoformat()
+        
+        habit_data = json.dumps(habit)
+        add_habit(habit_type, timestamp, habit_data)
         rows_added += 1
     
     log_sync(rows_added)

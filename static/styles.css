@@ -1,0 +1,69 @@
+body {
+    width: 300px;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #1B4A43;
+    color: #d3d3ce;
+    margin: 0;
+  }
+  h2 {
+    color: #F5F5EF;
+    margin-bottom: 20px;
+    font-weight: normal;
+  }
+  select, input, button {
+    margin: 10px 0;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #1A544C;
+    color: #d3d3ce;
+    transition: all 0.3s ease;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="%23e0e0e0" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/><path d="M0 0h24v24H0z" fill="none"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+  }
+  select::-ms-expand {
+    display: none;
+  }
+  select:focus, input:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #F5F5EF;
+  }
+  button {
+    background-color: #F5F5EF;
+    color: #F26D5E;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  button:hover {
+    background-color: #F5F5EF;
+  }
+  .form-group {
+    margin-bottom: 15px;
+  }
+  .habit-form {
+    background-color: #1A544C;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+  }
+  .habit-form input, .habit-form select {
+    width: calc(100% - 20px);
+    margin: 10px;
+  }
+  .input-hint {
+    font-size: 12px;
+    color: #d3d3ce;
+    margin-left: 10px;
+  }
