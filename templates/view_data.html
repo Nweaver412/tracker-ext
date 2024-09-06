@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Habit Data</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Habit Data</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Type</th>
+            <th>Timestamp</th>
+            <th>Data</th>
+        </tr>
+        {% for habit in habits %}
+        <tr>
+            <td>{{ habit['id'] }}</td>
+            <td>{{ habit['type'] }}</td>
+            <td>{{ habit['timestamp'] }}</td>
+            <td><pre>{{ habit['data'] | safe }}</pre></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

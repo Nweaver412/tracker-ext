@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "Habit Tracker",
+    "version": "1.0",
+    "description": "Track habits and analyze personal data",
+    "permissions": [
+      "storage",
+      "alarms"
+    ],
+    "host_permissions": [
+      "http://localhost:5000/"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "options_page": "options.html"
+  }
